@@ -2,15 +2,8 @@
 
 using namespace std;
 
-#define pii pair<int, int>
-#define vi vector<int>
-#define vvi vector<vi>
-#define mp make_pair
-#define ALL(x) x.begin(), x.end()
-
 typedef long long ll;
-// const double PI = 4*atan(1.);
-// const int INF = 0x3f3f3f3f;
+
 const int maxn = 5e3 + 10;
 
 int a[maxn][maxn];
@@ -35,10 +28,11 @@ int main() {
         d[xx + 1][y] -= c;
         d[xx + 1][yy + 1] += c;
     }
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
         for (int j = 1; j <= m; ++j) {
             d[i][j] += d[i - 1][j] + d[i][j - 1] - d[i - 1][j - 1];
             cout << d[i][j] << " \n"[j == m];
         }
+    }
     return 0;
 }
